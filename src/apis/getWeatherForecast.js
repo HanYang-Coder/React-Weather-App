@@ -1,31 +1,31 @@
 import jQuery from "jquery";
-import {db} from "./../backend/app_backend";
+import { db } from "./../backend/app_backend";
 
 
 
-export const getWeatherForecast = () =>{
-    jQuery(($)=>{
+export const getWeatherForecast = () => {
+    jQuery(($) => {
         $.noConflict();
         const $API_KEY = "cd34f692e856e493bd936095b256b337";
+        const $user_city = "Singapore"
         $.ajax({
-            url:`https://api.openweathermap.org/data/2.5/forecast?q=Nigeria&appid=${$API_KEY}`,
-            success: (result, status, xhr) =>{
-                if(result.cod == 200)
-                {
-                   //console.log(result);
-                   return result;
+            url: `https://api.openweathermap.org/data/2.5/forecast?q=${$user_city}&appid=${$API_KEY}`,
+            success: (result, status, xhr) => {
+                if (result.cod == 200) {
+                    //console.log(result);
+                    return result;
                 }
 
-               
-            },
-    
 
-            error: (xhr, status, error) =>{
+            },
+
+
+            error: (xhr, status, error) => {
                 console.log(error);
             }
         });
-    
-    
+
+
     })
-    
+
 }

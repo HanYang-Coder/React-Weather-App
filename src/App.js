@@ -1,5 +1,4 @@
 import Home from "./pages/Home";
-import Support from "./pages/Support";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import WeatherApp from "./pages/Weather";
 import WeatherMain from "./pages/WeatherMain";
@@ -20,7 +19,6 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route index element={DEFAULT_ROUTE_PAGE} />
-        <Route path="support" element={<Support />} />
         <Route path="weather" element={<WeatherApp />} />
         <Route path="weathermain" element={<WeatherMain />} />
         <Route path="forecast" element={<ForecastWeather />} />

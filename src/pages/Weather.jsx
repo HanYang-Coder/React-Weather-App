@@ -101,19 +101,7 @@ const WeatherApp = () => {
 		return uiData;
 	};
 
-	let forecastData = [
-		{
-			name: ["Keketu"],
-			icon: [Day],
-			unit: ["10"],
-		},
-
-		{
-			name: ["Sango"],
-			icon: [Thunder],
-			unit: ["50"],
-		},
-	];
+	let forecastData = [];
 
 	const showMoreWeather = () => {
 		navigate("weathermain");
@@ -174,7 +162,7 @@ const WeatherApp = () => {
 						setWeatherInput();
 					}}>
 					<label htmlFor="searchWeather" className="py-2 text-capitalize ">
-						search city
+						Search City
 					</label>
 					<input
 						type="text"
@@ -192,12 +180,12 @@ const WeatherApp = () => {
 					<p
 						className="error-holder text-danger py-3 fs-6 brand-small-text text-center d-none"
 						id="searchErrorLog">
-						city not found
+						City not found
 					</p>
 
 					<section className="d-none "></section>
 					<Button
-						text="track saved location!"
+						text="Search location!"
 						className="shadow brand-btn-3-secondary toggle-width-3 my-5 text-dark text-capitalize p-2"
 						id="searchSavedLocationWeather"
 						onClick={(e) => {
@@ -334,23 +322,26 @@ const WeatherApp = () => {
 				</section>
 				<section className="future-weather-days d-flex align-items-center justify-content-start">
 					<section className="today-section d-flex mx-2 flex-column align-items-center justify-content-center">
-						<p className="brand-small-text text-capitalize fw-bold">today</p>
+						<p className="brand-small-text text-capitalize fw-bold">Today</p>
 						<div className="future-weather-notch-active"></div>
 					</section>
-					<section className="tomorrow-section d-flex mx-2 flex-column align-items-center justify-content-center" onClick={navigateToForecast}>
-						<p className="brand-small-text text-capitalize">tomorrow</p>
-						<div className="future-weather-notch"></div>
-					</section>
-					<section className="week-section d-flex mx-2 flex-column align-items-center justify-content-center" onClick={navigateToForecast}>
-						<p className="brand-small-text text-capitalize">next</p>
-						<div className="future-weather-notch"></div>
-					</section>
+					
 				</section>
 				<section
 					className="future-weather-forecast my-4 d-flex align-items-center justify-content-between "
 					style={{ overflowX: "scroll" }}>
 					{mapDbSavedData()}
 				</section>
+
+				<section className="d-flex align-items-center justify-content-center">
+					<Button
+						text="Forecast for next 5 days"
+						className="brand-btn my-5 width-toggle"
+						onClick={navigateToForecast}
+					/>
+					<br />
+				</section>
+
 				<section className="ripple-container d-flex align-items-center justify-content-center">
 					<section className="map-container d-flex align-items-center justify-content-center">
 						<img
@@ -381,6 +372,9 @@ const WeatherApp = () => {
 					/>
 					<br />
 				</section>
+
+				
+
 
 				<br />
 				<br />

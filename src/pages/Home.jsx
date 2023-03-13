@@ -88,10 +88,6 @@ const Home = () => {
         </section>
 
         <br />
-        <br />
-        <br />
-        <br />
-        <br />
 
         <Button
           text="today's weather"

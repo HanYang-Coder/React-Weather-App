@@ -43,6 +43,8 @@ const ForecastWeather = () => {
 			const $user_latitude = db.get("USER_LATITUDE");
 			const $user_longitude = db.get("USER_LONGITUDE");
 			let FORECAST_URL;
+
+			//Weather forecast API URL
 			if (
 				$user_city == null && $user_latitude == null &&
 				$user_longitude == null
@@ -66,6 +68,8 @@ const ForecastWeather = () => {
 				FORECAST_URL = `https://api.openweathermap.org/data/2.5/forecast?lat=${$user_latitude}&lon=${$user_longitude}&appid=${$API_KEY}&units=${$WEATHER_UNIT}`;
 			} else {
 				FORECAST_URL = `https://api.openweathermap.org/data/2.5/forecast?q=${$user_city}&appid=${$API_KEY}&units=${$WEATHER_UNIT}`;
+				//For hourly forecast API URL (Only available in paid version)
+				//FORECAST_URL = `https://pro.openweathermap.org/data/2.5/forecast/hourly?q=${$user_city}&appid=${$API_KEY}&units=${$WEATHER_UNIT}`;
 			}
 			$.ajax({
 				url: FORECAST_URL,

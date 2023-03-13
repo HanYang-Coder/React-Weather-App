@@ -41,12 +41,12 @@ export const checkWeatherUnitDeg = () => {
 				break;
 
 			case "farenheit":
-				result = "f";
+				result = "imperial";
 				break;
 
-			case "kelvin":
-				result = "k";
-				break;
+			// case "kelvin":
+			// 	result = "k";
+			// 	break;
 
 			default:
 				result = "c";
@@ -119,7 +119,7 @@ export const checkWeatherCode = (code) => {
 		//few clouds
 		weatherSvg = FewClouds;
 	} else if (code == 802) {
-		//few clouds
+		//scattered clouds
 		weatherSvg = ScatteredClouds;
 	} else {
 		//weather code doesn't exist
@@ -144,7 +144,7 @@ export const updateReactDom = (result) => {
 			`<img src=${weatherSvg} alt="main-weather-icon" width="64" height="64"/>`
 		);
 		//sub weather components 
-		$("#wind-value").html(`${result.wind.speed} m/s` );
+		$("#wind-value").html(`${result.wind.speed} m/s`);
 		$("#humidity-value").html(`${result.main.humidity} %`);
 		$("#pressure-value").html(`${result.main.pressure} hPa`)
 		//create the database values for offline caching
@@ -179,7 +179,7 @@ export const getCurrentWeather = (location) => {
 				} else {
 					//check if the API returned a legit response
 					if (result.cod === 200) {
-						
+
 						updateReactDom(result);
 					}
 				}

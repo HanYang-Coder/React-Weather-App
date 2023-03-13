@@ -116,7 +116,7 @@ const WeatherMain = (props) => {
 							{db.get("SUB_WEATHER_HUMIDITY_VALUE") || "98%"}
 						</p>
 						<p className="m-0 humidity-text text-muted text-capitalize text-center brand-small-text-2 weather-text">
-							humidity
+							Humidity
 						</p>
 					</section>
 
