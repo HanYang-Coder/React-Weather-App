@@ -173,20 +173,21 @@ section.footer-nav > section {
 	padding: 20px;
 	position: fixed;
 	bottom: 0;
-	display: flex;
 	align-items: start;
 	flex-direction: column;
 	width: 100%;
 	margin: auto;
-	transition: 0.3s;
 	border-radius: var(--footer-nav-border-radius) var(--footer-nav-border-radius)
 		0px 0px;
 	height: 0%;
+	margin-bottom: 100px;
+	display: none;
 }
 
 .add-utility-component-height {
 	height: 60%;
-	z-index: 100;
+	display: flex;
+	transition: 0.3s;
 }
 
 .add-utility-component-height-2{

@@ -48,6 +48,7 @@ const WeatherApp = () => {
 			$.noConflict();
 			$(".cmp").removeClass("d-none");
 			$(".utility-component").toggleClass("add-utility-component-height");
+			$(".searchWeather").toggleClass("searchWeather");
 		});
 	};
 
@@ -157,10 +158,12 @@ const WeatherApp = () => {
 			<section className="cmp d-flex align-items-center justify-content-center flex-column my-5">
 				<form
 					id="searchWeatherForm"
+					class="searchWeather"
 					onSubmit={(e) => {
 						formHandler.handleWeatherForm(e);
 						setWeatherInput();
-					}}>
+					}}
+					onclick={addUtilityComponentHeight}>
 					<label htmlFor="searchWeather" className="py-2 text-capitalize ">
 						Search City
 					</label>

@@ -108,9 +108,6 @@ export const changeWeatherUnit = (e) => {
 				unitToStore = "metric";
 				break;
 			case "1":
-				unitToStore = "default";
-				break;
-			case "2":
 				unitToStore = "imperial";
 				break;
 

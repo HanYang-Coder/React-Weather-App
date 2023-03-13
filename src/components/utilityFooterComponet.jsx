@@ -6,7 +6,7 @@ const UtilityComponent = (props) => {
 		jQuery(($) => {
 			$.noConflict();
 			$(".cmp").addClass("d-none");
-			$(".utility-component").removeClass("add-utility-component-height");
+			$(".utility-component").toggleClass("add-utility-component-height");
 		});
 	};
 ;

@@ -85,9 +85,6 @@ const Settings = () => {
 										Degree Celsius
 									</option>
 									<option defaultValue="" value={1} className="text-capitalize">
-										kelvin
-									</option>
-									<option defaultValue="" value={2} className="text-capitalize">
 										Farenheit
 									</option>
 								</select>

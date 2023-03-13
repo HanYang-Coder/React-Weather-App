@@ -37,7 +37,7 @@ export const checkWeatherUnitDeg = () => {
 	if (db.get("WEATHER_UNIT")) {
 		switch (db.get("WEATHER_UNIT")) {
 			case "celsius":
-				result = "c";
+				result = "metric";
 				break;
 
 			case "farenheit":
